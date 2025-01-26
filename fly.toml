@@ -1,0 +1,25 @@
+# fly.toml app configuration file generated for stinyproxy on 2025-01-25T22:50:43+07:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'stinyproxy'
+primary_region = 'sin'
+
+[build]
+
+[[services]]
+  internal_port = 443
+  protocol = 'tcp'
+
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+
+  [[services.ports]]
+    handlers = []
+    port = 443
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
